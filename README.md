@@ -20,17 +20,17 @@ https://docs.djangoproject.com/en/3.2/intro/
         }  
     }  
   ```
-* Setup Environment Variables
+* Setup Environment Variables  
     . ./setenv.sh
-* Initialise django database
+* Initialise django database  
     python3 manage.py migrate
-* After made change to models
+* After made change to models  
     python3 manage.py makemigrations polls  
-    python3 manage.py sqlmigrate polls 0001  
-* Create site admin user
+    python3 manage.py sqlmigrate polls 0001   
+* Create site admin user  
     python3 manage.py createsuperuser
-* Start django web service
+* Start django web service  
     python3 manage.py runserver
-* Access web application
+* Access web application  
     http://localhost:8000/admin  
     http://localhost:8000/polls  
