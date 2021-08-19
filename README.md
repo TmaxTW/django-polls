@@ -2,7 +2,7 @@
 https://docs.djangoproject.com/en/3.2/intro/
 
 * Install django-tibero from github repository  
-  ```code
+  ```shell
   pip3 install git+https://github.com/cpyang/django-tibero.git  
   ```
 * Modify mysite/settings.py with Tibero as default database  
