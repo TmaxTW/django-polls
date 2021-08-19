@@ -6,7 +6,7 @@ https://docs.djangoproject.com/en/3.2/intro/
   pip3 install git+https://github.com/cpyang/django-tibero.git  
   ```
 * Modify mysite/settings.py with Tibero as default database  
-  ** Using django-tibero module  
+  Using django-tibero module  
   ```yaml
     DATABASES = {
         'default': {
@@ -24,7 +24,7 @@ https://docs.djangoproject.com/en/3.2/intro/
         }
     }
   ```
-  ** Using django-pyodbc module  
+  Using django-pyodbc module  
   ```yaml
     DATABASES = {  
         'default': {  
