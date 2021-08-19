@@ -4,6 +4,25 @@ https://docs.djangoproject.com/en/3.2/intro/
 ## Use django-pyodbc from github repository
 * pip3 install git+https://github.com/cpyang/django-pyodbc.git  
 * Modify mysite/settings.py with Tibero as default database  
+  ** Using django-tibero module  
+  ```yaml
+    DATABASES = {
+        'default': {
+            'ENGINE': "django_tibero",
+            'HOST': "127.0.0.1,8629",
+            'USER': "tibero",
+            'PASSWORD': "tmax",
+            'NAME': "tibero",
+            'OPTIONS': {
+                'dsn': "tibero",
+                'unicode_results': True,
+                'connection_timeout': 0,
+                'dbshell': "tbsql",
+            },
+        }
+    }
+  ```
+  ** Using django-pyodbc module  
   ```yaml
     DATABASES = {  
         'default': {  
@@ -13,6 +32,7 @@ https://docs.djangoproject.com/en/3.2/intro/
             'PASSWORD': "tmax",  
             'NAME': "tibero",  
             'OPTIONS': {  
+                'dsn': "tibero",
                 'host_is_server': True,  
                 'driver': "Tibero",  
                 'dbms_type': 'tibero',  

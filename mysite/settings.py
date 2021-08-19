@@ -90,6 +90,9 @@ DATABASES = {
         'NAME': "tibero",
         'OPTIONS': {
             'dsn': "tibero",
+            'unicode_results': True,
+            'connection_timeout': 0,
+            'dbshell': "tbsql",
         },
     }
 }
@@ -102,6 +105,7 @@ DATABASES = {
         'USER': "tibero",
         'PASSWORD': "tmax",
         'OPTIONS': {
+            'dsn': "tibero",
             'host_is_server': True,
             'driver': "Tibero",
             'dbms_type': "tibero",
