@@ -44,24 +44,24 @@ https://docs.djangoproject.com/en/3.2/intro/
   ```
 * Setup Environment Variables  
   ```shell
-    . ./setenv.sh
+  . ./setenv.sh
   ```
 * Initialise django database  
   ```shell
-    python3 manage.py migrate
+  python3 manage.py migrate
   ```
 * After made change to models  
   ```shell
-    python3 manage.py makemigrations polls  
-    python3 manage.py sqlmigrate polls 0001   
+  python3 manage.py makemigrations polls  
+  python3 manage.py sqlmigrate polls 0001   
   ```
 * Create site admin user  
   ```shell
-    python3 manage.py createsuperuser
+  python3 manage.py createsuperuser
   ```
 * Start django web service  
   ```shell
-    python3 manage.py runserver
+  python3 manage.py runserver
   ```
 * Access web application  
   Admin: http://localhost:8000/admin  
