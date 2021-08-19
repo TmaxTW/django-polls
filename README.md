@@ -1,8 +1,10 @@
 # Sample application based on django tutorial
 https://docs.djangoproject.com/en/3.2/intro/
 
-## Use django-pyodbc from github repository
-* pip3 install git+https://github.com/cpyang/django-pyodbc.git  
+* Install django-tibero from github repository  
+  ```code
+  pip3 install git+https://github.com/cpyang/django-tibero.git  
+  ```
 * Modify mysite/settings.py with Tibero as default database  
   ** Using django-tibero module  
   ```yaml
