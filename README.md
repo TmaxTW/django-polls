@@ -67,3 +67,17 @@ https://docs.djangoproject.com/en/3.2/intro/
   Admin: http://localhost:8000/admin  
   Polls: http://localhost:8000/polls  
 
+* Runing this demo application with docker
+** Using docker-compose
+  Modify database connection informat in docker-compose.yml
+  ```shell
+  cd docker
+  docker-compose build
+  docker-compose up
+  ```
+** Using docker
+  Put database connection information in build arguments
+  ```shell
+  docker build -t polls --build-arg DB_NAME=tibero --build-arg DB_HOST=localhost --build-arg DB_PORT=8629 .
+  docker run --name polls -p 8000:8000 polls
+  ```
