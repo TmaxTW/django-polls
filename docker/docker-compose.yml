@@ -1,0 +1,14 @@
+version: '3'
+services:
+  polls:
+    image: polls
+    container_name: polls
+    hostname: polls
+    build:
+      context: .
+      args:
+        DB_NAME: tibero
+        DB_HOST: legion
+        DB_PORT: 8629
+    ports:
+      - "8000:8000"
