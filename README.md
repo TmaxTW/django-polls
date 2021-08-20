@@ -1,10 +1,12 @@
 # Sample application based on django tutorial
 https://docs.djangoproject.com/en/3.2/intro/
 
-## Use django-pyodbc from github repository
-* pip3 install git+https://github.com/cpyang/django-pyodbc.git  
+* Install django-tibero from github repository  
+  ```shell
+  pip3 install git+https://github.com/cpyang/django-tibero.git  
+  ```
 * Modify mysite/settings.py with Tibero as default database  
-  ** Using django-tibero module  
+  Using django-tibero module  
   ```yaml
     DATABASES = {
         'default': {
@@ -22,7 +24,7 @@ https://docs.djangoproject.com/en/3.2/intro/
         }
     }
   ```
-  ** Using django-pyodbc module  
+  Using django-pyodbc module  
   ```yaml
     DATABASES = {  
         'default': {  
@@ -41,16 +43,27 @@ https://docs.djangoproject.com/en/3.2/intro/
     }  
   ```
 * Setup Environment Variables  
-    . ./setenv.sh
+  ```shell
+  . ./setenv.sh
+  ```
 * Initialise django database  
-    python3 manage.py migrate
+  ```shell
+  python3 manage.py migrate
+  ```
 * After made change to models  
-    python3 manage.py makemigrations polls  
-    python3 manage.py sqlmigrate polls 0001   
+  ```shell
+  python3 manage.py makemigrations polls  
+  python3 manage.py sqlmigrate polls 0001   
+  ```
 * Create site admin user  
-    python3 manage.py createsuperuser
+  ```shell
+  python3 manage.py createsuperuser
+  ```
 * Start django web service  
-    python3 manage.py runserver
+  ```shell
+  python3 manage.py runserver
+  ```
 * Access web application  
-    http://localhost:8000/admin  
-    http://localhost:8000/polls  
+  Admin: http://localhost:8000/admin  
+  Polls: http://localhost:8000/polls  
+
