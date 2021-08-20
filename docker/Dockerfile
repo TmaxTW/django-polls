@@ -1,15 +1,12 @@
 FROM debian:buster
 ENV SUMMARY="Tibero Django Demo" DESCRIPTION="Demo Polls Application for django-tibero."
 ARG DB_NAME=tibero DB_HOST=localhost DB_PORT=8629
-RUN echo DB_NAME=${DB_NAME} DB_HOST=${DB_HOST} DB_PORT=${DB_NAME}
-#ENV DB_NAME=${DB_NAME} DB_HOST=${DB_HOST} DB_PORT=${DB_NAME}
-RUN echo DB_NAME=${DB_NAME} DB_HOST=${DB_HOST} DB_PORT=${DB_NAME}
 
 LABEL summary="$SUMMARY" \
       description="$DESCRIPTION" \
       name="tmaxsoft/django-tibero_polls" \
       version="1.0" \
-      usage="docker run -it tmaxsoft/django-tibero_polls" \
+      usage="docker run --name polls tmaxsoft/django-tibero_polls" \
       maintainer="Conrad Yang <conrad.yang@tmaxsoft.com>"
 
 RUN apt update
@@ -28,9 +25,7 @@ RUN pip3 install setuptools
 RUN pip3 install pyodbc
 RUN pip3 install django==3.1.4
 RUN pip3 install git+https://github.com/tmaxtw/django-tibero.git
-# This will replace DB Server hostname from tbdsn.tbr
-#RUN cat tbdsn.tbr | sed 's/localhost/${DB_HOST}/' | sed 's/8629/${DB_PORT}/' | sed 's/tibero/${DB_NAME}/' > /tmp/tbdsn.tbr && mv /tmp/tbdsn.tbr .
-RUN echo "${DB_NAME}=((INSTANCE=(HOST=${DB_HOST})(PORT=${DB_PORT})(DB_NAME=${DB_NAME})))" > tbdsn.tbr
+RUN echo "tibero=((INSTANCE=(HOST=${DB_HOST})(PORT=${DB_PORT})(DB_NAME=${DB_NAME})))" > tbdsn.tbr
 
 COPY runserver.sh /home/docker/django-polls
 COPY createsuperuser.py /home/docker/django-polls
