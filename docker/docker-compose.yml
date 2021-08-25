@@ -1,4 +1,4 @@
-version: '3'
+version: '3.2'
 services:
   polls:
     image: polls
@@ -8,7 +8,12 @@ services:
       context: .
       args:
         DB_NAME: tibero
-        DB_HOST: localhost
+        DB_HOST: tibero6
         DB_PORT: 8629
     ports:
       - "8000:8000"
+    networks:
+      - docker_tibero_default
+networks:
+  docker_tibero_default:
+    external: true
